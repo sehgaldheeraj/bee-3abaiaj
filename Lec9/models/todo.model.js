@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const path = require("path");
 //'./models/todo.model.js'
-const todosDB = path.join(__dirname, "models", "todos.json");
+const todosDB = path.join(__dirname, "todos.json");
 /**
  * fs/promises
  * fs.readFile(pathToFile :string)  : fs.readFileSync()

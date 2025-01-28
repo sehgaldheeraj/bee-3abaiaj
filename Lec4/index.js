@@ -22,18 +22,14 @@ app.get("/home", (req, res) => {
  * 2. Data validation
  * 3. Add user to DB
  */
-users = [];
 app.post("/users", (req, res) => {
   const { name, age, email, password, phone } = req.body; // const name = req.body.name;
   if (!name || !email || !password) {
     return res.status(404).send({ message: "Please fill the required fields" });
   }
-  users.push(req.body);
   //JSON -> JS obj  JSON.parse()
   console.log(req.body);
-  res
-    .status(201)
-    .send({ users: users, message: "account created successfully" });
+  res.status(201).send({ message: "account created successfully" });
 });
 //started server as a process
 app.listen(3000, () => {

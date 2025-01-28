@@ -1,0 +1,2 @@
+//show collections
+//show dbs
