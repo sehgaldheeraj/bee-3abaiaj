@@ -1,6 +1,5 @@
 //importing the dependency
 const express = require("express");
-const bodyParser = require("body-parser");
 //creating a server instance
 const app = express();
 
