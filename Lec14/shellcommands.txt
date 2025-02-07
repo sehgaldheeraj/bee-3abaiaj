@@ -1,0 +1,17 @@
+1. view all the dbs in your cluster
+    - show dbs
+2. select a db to perform actions upon it
+    - use <db_name>    
+3. view all the collections in your db
+    - show collections
+4. create a new collection
+5.  i) inserting a document into the collection(CREATE operation)
+    db.<collection_name>.insertOne({}) | CREATE <table_name> ({})
+   ex. db.students.insertOne({id: 1, name:'John', age: 20, section: 'AE'})
+6. ii) inserting multiple documents into the collection
+    db.<collection_name>.insertMany([{}, {}, {}])
+7. read a collection(READ operation)
+    db.<collection_name>.find({filter}) | SELECT * from <table>    
+//{age : {$lt: 20}}
+
+db -> collection -> {}

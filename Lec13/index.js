@@ -1,8 +1,9 @@
 const express = require("express");
 const methodOverride = require("method-override");
+const mongoose = require("mongoose");
 const Todo = require("./models/todo.model");
 const app = express();
-
+const URI = ""; //connection string entered
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -54,7 +55,14 @@ app.patch("/todos/:id", async (req, res) => {
 });
 
 //Major update - PUT Request
-
+async function connect() {
+  try {
+    await mongoose.connect(URI);
+  } catch (err) {
+    console.log("connection failed due to: ", err.message);
+  }
+}
+connect();
 app.listen(3000, () => {
   console.log("learning RESTful CRUD operations at 3000");
 });
