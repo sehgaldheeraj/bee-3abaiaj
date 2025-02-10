@@ -1,6 +1,6 @@
 1. view all the dbs in your cluster
     - show dbs
-2. select a db to perform actions upon it (or switch db, or create new db)
+2. select a db to perform actions upon it
     - use <db_name>    
 3. view all the collections in your db
     - show collections
@@ -13,17 +13,5 @@
 7. read a collection(READ operation)
     db.<collection_name>.find({filter}) | SELECT * from <table>    
 //{age : {$lt: 20}}
-   Comparisons:
-   (equal to) {key : value} || {key : {$eq: value}}
-   (lt) {key: {$lt: value}}, $gt, $lte, $gte, $eq
-8. update a document 
-    we need to figure out what documents are going to be updated and then update the document
-    SELECT * fROM lectures where hpw<5 UPDATE isLessHeavy: false
-    db.<collection_name>.updateOne({filter}, {$set: {key: value}});
-9. delete a document    
- //If we want to delete all the documents from our collection????
- //db.lectures.deleteMany({}); 
- //db.lectures.drop();
- Q. set isHeavy: true to all the documents where lectureperweek is >= 3?
- db.lectures.updateMany({hpw : {$gte: 3} }, {$set: {isHeavy: true}})
 
+db -> collection -> {}

@@ -40,6 +40,10 @@ app.post("/todo", async (req, res) => {
     res.status(500).send({ error: err.message });
   }
 });
+app.get("/updateTodo/:id", (req, res) => {
+  const { id } = req.params;
+  res.render("updateTodo", { id });
+});
 /**
  * 200 - 299 -> Success codes
  * 300 - 399 -> General purpose codes

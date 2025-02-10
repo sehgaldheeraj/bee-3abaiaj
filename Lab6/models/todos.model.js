@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const todosSchema = mongoose.Schema({
-  NamedNodeMap: { type: String, required: true },
+  title: { type: String, required: true },
   desc: String,
   category: { type: String, default: "others" },
   state: { type: String, default: "pending" },

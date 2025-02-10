@@ -1,10 +1,8 @@
-//const Todo = require("../models/todo.model"); fs based model
-const Todo = require("../models/todos.model");
+const Todo = require("../models/todo.model");
 
 const getAllTodos = async (req, res) => {
   try {
-    //const todos = await Todo.readTodos();
-    const todos = await Todo.find();
+    const todos = await Todo.readTodos();
     res.render("index", { todos });
   } catch (err) {
     res.status(500).send({ message: "Internal Server Error" });
@@ -15,12 +13,11 @@ const addTodoView = (req, res) => res.render("addTodo");
 
 const addTodo = async (req, res) => {
   try {
-    const { name, desc, category, state } = req.body;
-
-    //await Todo.addTodo(name, type, status);
-    const newTodo = new Todo({ name, desc, category, state });
-    await newTodo.save();
-    //await Todo.create({ name, desc, category, state });
+    const { name, type, status } = req.body;
+    if (!name || !type || !status) {
+      return res.status(404).send({ message: "Enter All Details" });
+    }
+    await Todo.addTodo(name, type, status);
     return res.status(201).redirect("/v1/todos");
   } catch (err) {
     res.status(500).send({ error: err.message });
@@ -28,9 +25,8 @@ const addTodo = async (req, res) => {
 };
 const updateTodoView = (req, res) => res.render("updateTodo");
 const updateTodo = async (req, res) => {
-  const { id, status } = req.body;//4
-  //await Todo.updateTodo(id, status);
-  await Todo.updateOne({ id: id }, { status: status });
+  const { id, status } = req.body;
+  await Todo.updateTodo(id, status);
   res.status(200).redirect("/v1/todos");
 };
 module.exports = {
