@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Update Todo</h1>
-    <form method="patch" action="/todos">
+    <form method="post" action="/todos/<%= id %>?_method=override">
         <label for="status">Enter Updated Status</label>
         <input type="text" name="status"></input>
         <button type="submit">Update Todo</button>

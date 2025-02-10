@@ -45,6 +45,7 @@ app.post("/todo", async (req, res) => {
  * 400 - 499 -> Client side error
  * 500 - beyond -> Server side error
  */
+app.get("/updateTodo/:id", (req, res) => res.render("updateTodo", { id }));
 //Minor update - PATCH Request
 app.patch("/todos/:id", async (req, res) => {
   const { status } = req.body;
