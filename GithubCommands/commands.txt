@@ -1,0 +1,2 @@
+1. git init 
+2. git add <file_name> : add your file to the staging area
