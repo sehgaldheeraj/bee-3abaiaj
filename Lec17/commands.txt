@@ -2,3 +2,10 @@ git init
 git status
 git add <file_name> ... or git add .
 git commit -m 'learning git'
+git log
+git reset <commit_hash>
+git push origin main
+git remote add origin 'https://github.com/username/repo.git'
+git branch -M main   (sets 'main' as the main branch)
+git branch auth
+git checkout <branch_name>

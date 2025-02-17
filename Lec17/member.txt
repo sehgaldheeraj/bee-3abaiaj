@@ -1,0 +1,11 @@
+git clone 'http://g.com/sehgal/ecom.git'
+git remote add origin 'http://g.com/member1/ecom.git'
+git branch -M main
+git branch auth
+git checkout auth
+git add .
+git commit 
+git push origin auth
+git push origin main
+git remote add upstream 'http://g.com/sehgal/ecom.git'
+git push upstream main
