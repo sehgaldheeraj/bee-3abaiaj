@@ -1,0 +1,4 @@
+git init 
+git status
+git add <file_name> ... or git add .
+git commit -m 'learning git'
