@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/v1/users/login">
+        
+        <div>  
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Enter Your Email"></input>
+        </div>
+    
+        <div>  
+          <label for="password">Password</label>
+          <input type="password" name="fullname" placeholder="Enter Your Password(Min 6 Characters)"></input>
+        </div>
+        <div>
+          <button type="submit">Login</button>
+        </div>
+        </form>
+        <h5>Not a member? <a href="register">Click Here to Join Us</a></h5>
+</body>
+</html>
