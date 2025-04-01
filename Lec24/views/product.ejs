@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="product">
+      <h5><%= product.name %></h5>
+      <p><%= product.desc %></p>
+      <p><%= product.price %></p>
+      <p><%= product.qty %></p>
+      <p><%= product.category %></p>
+      <span><a href="/v1/products/<%= id %>/edit">Update Product Data</a></span>
+      <span
+        ><form
+          method="POST"
+          action="/v1/products/<%= id %>/delete?_method=delete"
+        >
+          <button type="submit">Delete Product Data</button>
+        </form></span
+      >
+    </div>
+  </body>
+</html>

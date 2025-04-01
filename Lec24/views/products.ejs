@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ECOM</h1>
+    <a href="/v1/products/new">Add Product</a>
+    <div class="productsContainer">
+      <% products.forEach(product=> { %>
+      <div>  
+      <h5><%= product.name %></h5>
+      <p><%= product.desc %></p>
+      <p><%= product.price %></p>
+      <p><%= product.qty %></p>
+      <p><%= product.category %></p>
+      <p><a href="/v1/products/<%= product._id %>">View Product</a></p>
+    </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
